@@ -1,0 +1,24 @@
+import java.io.*;
+
+public class FileVowels {
+  public static void main(String[] args) throws IOException {
+    BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\admin\\Documents\\dummy.txt"));
+
+    int Count = 0;
+    
+    for (int i = 0; i < 5; i++) {
+      String line = reader.readLine();
+
+      for (char c : line.toCharArray()) {
+       
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
+          Count++;
+        }
+      }
+    }
+
+    reader.close();
+
+    System.out.println("Vowel count: " + Count);
+  }
+}
