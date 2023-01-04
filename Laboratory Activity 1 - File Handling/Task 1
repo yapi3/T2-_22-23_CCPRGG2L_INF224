@@ -1,0 +1,19 @@
+import java.io.*; 
+  
+ public class FileSum { 
+     public static void main(String[] args) throws IOException { 
+        BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\admin\\Documents\\data.txt"));
+        String line;
+        int sum = 0;
+  
+        while ((line = reader.readLine()) != null) {
+            sum += Integer.parseInt(line);
+        }
+        reader.close();
+  
+         FileWriter fw = new FileWriter("sum.txt"); 
+         BufferedWriter bw = new BufferedWriter(fw); 
+         bw.write(Integer.toString(sum)); 
+         bw.close(); 
+     } 
+ }
