@@ -1,0 +1,13 @@
+public class PoemRunner {
+    public static void main(String[] args) {
+        Poem p = new Poem("Poem", 10);
+        Couplet c = new Couplet("to you");
+        Limerick p2 = new Limerick("Happy birthday");
+        Haiku p3 = new Haiku("hehe");
+        
+        System.out.println(p.gettitle()+" - "+p.getlines()+" lines");
+        System.out.println(c.gettitle()+" - "+c.getlines()+" lines");
+        System.out.println(p2.gettitle()+" - "+p2.getlines()+" lines");
+        System.out.println(p3.gettitle()+" - "+p3.getlines()+" lines");
+    }
+}
