@@ -1,0 +1,74 @@
+import javax.swing.JFrame;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import javax.swing.Jlabel;
+import javax.swing.JPanel;
+import java.awt.Font;
+import javax.swing.RadioButton;
+import javax.swing.ButtonGroup;
+
+public class RamenHouse {
+    JFrame frame = new JFrame("RJ's Ramen House");
+    JLabel lblMenu = new JLabel("M E N U", SwingConstants.CENTER); 
+    Font f1 = new Font(Font.SERIF, Font.PLAIN, 30);
+    JLabel lblSingle = new JLabel("This is for a single order only.", SwingConstants.CENTER)
+    
+    JPanel panel1 = new JPanel();
+    JPanel panel2 = new JPanel();
+    JPanel panel3 = new JPanel();
+    JPanel panel4 = new JPanel();
+    JPanel panel5 = new JPanel();
+    
+    JLabel lblRamenTyoe = new JLabel("Choose what ramen you like:")
+    ButtonGrp ramenGrp = new ButtonGroup();
+    JRadioButton rbtShiro = new JRadioButton("Shiro Ramen [Php 425]",true);
+    JRadioButton rbtKuro = new JRadioButton("Kuro Ramen [Php 450]");
+    JRadioButton rbtAka = new JRadioButton("Aka Ramen [Php 450]");
+    
+    public RamenHouse() {
+        frame.setLayout(new GridLayout(5,0));
+        frame.setSize(500, 500);
+        frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+        
+        Toolkit tk = frame.getToolkit();
+        Dimension size = tk.getScreenSize();
+        frame.setLocation(size.width/2 - frame.getWidth()/2, size.height/2 - frame.getHeight()/2);
+        
+        lblMenu.setSize(40, 40);
+        lblMenu.setFont(f1);
+        
+        panel1.setLayout(new GridLayout(2,1));
+        panel1.add(lblMenu);
+        panel1.add(lblSingle);
+    //panel1.setBackground(Color.CYAN);
+    //panel2.setBackground(Color.BLUE);
+    //panel3.setBackground(Color.GRAY);
+    //panel4.setBackground(Color.MAGENTA);
+    //panel5.setBackground(Color.PINK);
+    //panel1.setBackground(New Color(0,0,0));
+        
+        ramenGrp.add(rbtShiro);
+        ramenGrp.add(rbtKuro);
+        ramenGrp.add(rbtAka);
+        
+        Box b1 = Box.createVerticalBox();
+        b1.add(rbtShiro);
+        b1.add(rbtKuro);
+        b1.add(rbtAka);
+        
+        panel2.add(lblRamenType);
+        panel2.add(b1);
+        
+        frame.add(panel1);
+        frame.add(panel2);
+        frame.add(panel3);
+        frame.add(panel4);
+        frame.add(panel5);
+        
+        frame.setVisible(true);
+    }
+    public static void main(String args[]) {
+        RamenHouse GUI = new RamenHouse();  
+
+    }
+}
